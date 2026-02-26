@@ -17,6 +17,9 @@ func _ready() -> void:
 func get_fish_bucks() -> int:
 	return _state.fish_bucks
 
+func get_count(rarity: String) -> int:
+	return _state.tin_collection.get(rarity)
+
 func add_fish_bucks(amount: int) -> void:
 	_state.fish_bucks += amount
 	_state.save_to_disk()

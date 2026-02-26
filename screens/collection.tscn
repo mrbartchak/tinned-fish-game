@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://pa14jvwto1cu"]
+
+[ext_resource type="Script" uid="uid://x1yi5xatoo80" path="res://screens/collection.gd" id="1_561gy"]
+[ext_resource type="Texture2D" uid="uid://dwfugqdiq5cy3" path="res://assets/sprites/common_tin.png" id="1_daqs8"]
+[ext_resource type="Texture2D" uid="uid://xxf14istdxbc" path="res://assets/sprites/uncommon_tin.png" id="2_5g78q"]
+[ext_resource type="Texture2D" uid="uid://wn65fveq301w" path="res://assets/sprites/rare_tin.png" id="3_561gy"]
+[ext_resource type="Texture2D" uid="uid://bj8iis8xwfc4f" path="res://assets/sprites/epic_tin.png" id="4_hfqn8"]
+[ext_resource type="Texture2D" uid="uid://c7ji2jcxx7hsj" path="res://assets/sprites/legendary_tin.png" id="5_tahuu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fsn3i"]
+font_color = Color(0.7529412, 0.79607844, 0.8627451, 1)
+
+[node name="Collection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_561gy")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CommonCount" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 85.0
+offset_top = 28.0
+offset_right = 125.0
+offset_bottom = 44.0
+text = "0"
+label_settings = SubResource("LabelSettings_fsn3i")
+
+[node name="TextureRect" type="TextureRect" parent="CommonCount"]
+layout_mode = 0
+offset_left = -23.0
+offset_top = 17.0
+offset_right = 29.0
+offset_bottom = 59.0
+texture = ExtResource("1_daqs8")
+
+[node name="UncommonCount" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 159.0
+offset_top = 25.0
+offset_right = 199.0
+offset_bottom = 41.0
+text = "0"
+label_settings = SubResource("LabelSettings_fsn3i")
+
+[node name="TextureRect" type="TextureRect" parent="UncommonCount"]
+layout_mode = 0
+offset_left = -23.0
+offset_top = 19.0
+offset_right = 29.0
+offset_bottom = 61.0
+texture = ExtResource("2_5g78q")
+
+[node name="RareCount" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 234.0
+offset_top = 26.0
+offset_right = 274.0
+offset_bottom = 42.0
+text = "0"
+label_settings = SubResource("LabelSettings_fsn3i")
+
+[node name="TextureRect" type="TextureRect" parent="RareCount"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 19.0
+offset_right = 27.0
+offset_bottom = 61.0
+texture = ExtResource("3_561gy")
+
+[node name="EpicCount" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 119.0
+offset_top = 96.0
+offset_right = 159.0
+offset_bottom = 112.0
+text = "0"
+label_settings = SubResource("LabelSettings_fsn3i")
+
+[node name="TextureRect" type="TextureRect" parent="EpicCount"]
+layout_mode = 0
+offset_left = -23.0
+offset_top = 20.0
+offset_right = 29.0
+offset_bottom = 62.0
+texture = ExtResource("4_hfqn8")
+
+[node name="LegendaryCount" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 196.0
+offset_top = 102.0
+offset_right = 236.0
+offset_bottom = 118.0
+text = "0"
+label_settings = SubResource("LabelSettings_fsn3i")
+
+[node name="TextureRect" type="TextureRect" parent="LegendaryCount"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 16.0
+offset_right = 24.0
+offset_bottom = 58.0
+texture = ExtResource("5_tahuu")
