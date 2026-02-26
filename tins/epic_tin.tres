@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TinData" load_steps=3 format=3 uid="uid://dlg5s4sjvd2in"]
+
+[ext_resource type="Script" uid="uid://7uq5edmei4st" path="res://tins/tin_data.gd" id="1_yb1lm"]
+[ext_resource type="Texture2D" uid="uid://bj8iis8xwfc4f" path="res://assets/sprites/epic_tin.png" id="2_yb1lm"]
+
+[resource]
+script = ExtResource("1_yb1lm")
+rarity = "epic"
+value = 1000
+weight = 4
+texture = ExtResource("2_yb1lm")
+color = Color(0.70980394, 0.3137255, 0.53333336, 1)
+metadata/_custom_type_script = "uid://7uq5edmei4st"

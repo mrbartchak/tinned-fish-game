@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TinData" load_steps=3 format=3 uid="uid://bap7usith4ebo"]
+
+[ext_resource type="Script" uid="uid://7uq5edmei4st" path="res://tins/tin_data.gd" id="1_dirw7"]
+[ext_resource type="Texture2D" uid="uid://wn65fveq301w" path="res://assets/sprites/rare_tin.png" id="2_dirw7"]
+
+[resource]
+script = ExtResource("1_dirw7")
+rarity = "rare"
+value = 100
+weight = 15
+texture = ExtResource("2_dirw7")
+color = Color(0.17254902, 0.9098039, 0.9607843, 1)
+metadata/_custom_type_script = "uid://7uq5edmei4st"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TinData" load_steps=3 format=3 uid="uid://c4pflsbdl5or5"]
+
+[ext_resource type="Script" uid="uid://7uq5edmei4st" path="res://tins/tin_data.gd" id="1_2rs14"]
+[ext_resource type="Texture2D" uid="uid://xxf14istdxbc" path="res://assets/sprites/uncommon_tin.png" id="2_2rs14"]
+
+[resource]
+script = ExtResource("1_2rs14")
+rarity = "uncommon"
+value = 25
+weight = 30
+texture = ExtResource("2_2rs14")
+color = Color(0.3882353, 0.78039217, 0.3019608, 1)
+metadata/_custom_type_script = "uid://7uq5edmei4st"

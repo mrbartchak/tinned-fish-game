@@ -1,0 +1,176 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfpyl3c4dumcq"]
+
+[ext_resource type="Script" uid="uid://degkj5nou6d1q" path="res://screens/pack_opener.gd" id="1_hvao0"]
+[ext_resource type="Texture2D" uid="uid://da3swt8mmhwsj" path="res://assets/sprites/paper_wrapped_tin.png" id="1_q0pbw"]
+[ext_resource type="Texture2D" uid="uid://c11rdgblir6ph" path="res://assets/sprites/paper_wrapped_tin_outlined.png" id="3_snatv"]
+[ext_resource type="Texture2D" uid="uid://c3r0jsf6bv7sl" path="res://assets/sprites/fish_bucks_small.png" id="4_2ppfu"]
+
+[sub_resource type="Curve" id="Curve_2ppfu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7115789, 0.73990715), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_w8yuy"]
+curve = SubResource("Curve_2ppfu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2ppfu"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 100.0
+initial_velocity_max = 160.0
+angular_velocity_min = -500.0
+angular_velocity_max = 499.99997
+gravity = Vector3(0, 300, 0)
+scale_min = 2.0
+scale_max = 4.0
+color = Color(0.89411765, 0.6509804, 0.44705883, 1)
+alpha_curve = SubResource("CurveTexture_w8yuy")
+
+[node name="PackOpener" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvao0")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InstructionLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_top = 29.0
+offset_right = 48.5
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.7529412, 0.79607844, 0.8627451, 1)
+bbcode_enabled = true
+text = "[wave freq=3]Choose a tin!"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TinResult" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -23.0
+offset_right = 28.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(28, 23)
+texture = ExtResource("1_q0pbw")
+stretch_mode = 3
+
+[node name="PaperParticles" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(160, 90)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_2ppfu")
+
+[node name="TinLeft" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 46)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -21.0
+offset_right = 116.0
+offset_bottom = 21.0
+grow_vertical = 2
+pivot_offset = Vector2(28, 23)
+texture_normal = ExtResource("1_q0pbw")
+texture_pressed = ExtResource("1_q0pbw")
+texture_hover = ExtResource("3_snatv")
+texture_disabled = ExtResource("1_q0pbw")
+texture_focused = ExtResource("1_q0pbw")
+
+[node name="TinCenter" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 46)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -23.0
+offset_right = 28.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(28, 23)
+texture_normal = ExtResource("1_q0pbw")
+texture_pressed = ExtResource("1_q0pbw")
+texture_hover = ExtResource("3_snatv")
+texture_disabled = ExtResource("1_q0pbw")
+texture_focused = ExtResource("1_q0pbw")
+
+[node name="TinRight" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 46)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -21.0
+offset_right = -64.0
+offset_bottom = 21.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(28, 23)
+texture_normal = ExtResource("1_q0pbw")
+texture_pressed = ExtResource("1_q0pbw")
+texture_hover = ExtResource("3_snatv")
+texture_disabled = ExtResource("1_q0pbw")
+texture_focused = ExtResource("1_q0pbw")
+
+[node name="FishBucksContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_bottom = 18.0
+grow_horizontal = 2
+theme_override_constants/separation = 3
+
+[node name="FishBucksIcon" type="TextureRect" parent="FishBucksContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_2ppfu")
+stretch_mode = 2
+
+[node name="FishBucksCount" type="RichTextLabel" parent="FishBucksContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 16)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.09803922, 0.23529412, 0.24313726, 1)
+bbcode_enabled = true
+text = "[wave freq=2]$0000"
+scroll_active = false
