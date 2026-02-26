@@ -9,5 +9,5 @@ rarity = "rare"
 value = 100
 weight = 15
 texture = ExtResource("2_dirw7")
-color = Color(0.17254902, 0.9098039, 0.9607843, 1)
+color = Color(0, 0.6, 0.85882354, 1)
 metadata/_custom_type_script = "uid://7uq5edmei4st"

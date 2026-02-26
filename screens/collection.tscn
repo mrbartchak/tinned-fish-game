@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://pa14jvwto1cu"]
+[gd_scene load_steps=12 format=3 uid="uid://pa14jvwto1cu"]
 
 [ext_resource type="Script" uid="uid://x1yi5xatoo80" path="res://screens/collection.gd" id="1_561gy"]
 [ext_resource type="Texture2D" uid="uid://dwfugqdiq5cy3" path="res://assets/sprites/common_tin.png" id="1_daqs8"]
@@ -9,6 +9,18 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_fsn3i"]
 font_color = Color(0.7529412, 0.79607844, 0.8627451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_561gy"]
+font_color = Color(0.3882353, 0.78039217, 0.3019608, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hfqn8"]
+font_color = Color(0, 0.6, 0.85882354, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tahuu"]
+font_color = Color(1, 0, 0.26666668, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rfsjh"]
+font_color = Color(0.99607843, 0.68235296, 0.20392157, 1)
 
 [node name="Collection" type="Control"]
 layout_mode = 3
@@ -27,92 +39,107 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CommonCount" type="Label" parent="."]
-unique_name_in_owner = true
+[node name="CommonGroup" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 85.0
-offset_top = 28.0
-offset_right = 125.0
-offset_bottom = 44.0
-text = "0"
-label_settings = SubResource("LabelSettings_fsn3i")
-
-[node name="TextureRect" type="TextureRect" parent="CommonCount"]
-layout_mode = 0
-offset_left = -23.0
-offset_top = 17.0
-offset_right = 29.0
-offset_bottom = 59.0
-texture = ExtResource("1_daqs8")
-
-[node name="UncommonCount" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 159.0
+offset_left = 64.0
 offset_top = 25.0
-offset_right = 199.0
-offset_bottom = 41.0
+offset_right = 127.0
+offset_bottom = 87.0
+theme_override_constants/separation = 1
+
+[node name="CommonCount" type="Label" parent="CommonGroup"]
+unique_name_in_owner = true
+layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_fsn3i")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="UncommonCount"]
+[node name="TextureRect" type="TextureRect" parent="CommonGroup"]
+layout_mode = 2
+texture = ExtResource("1_daqs8")
+stretch_mode = 3
+
+[node name="UncommonGroup" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = -23.0
-offset_top = 19.0
-offset_right = 29.0
-offset_bottom = 61.0
+offset_left = 132.0
+offset_top = 25.0
+offset_right = 195.0
+offset_bottom = 87.0
+theme_override_constants/separation = 1
+
+[node name="UncommonCount" type="Label" parent="UncommonGroup"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_561gy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UncommonGroup"]
+layout_mode = 2
 texture = ExtResource("2_5g78q")
+stretch_mode = 3
 
-[node name="RareCount" type="Label" parent="."]
+[node name="RareGroup" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 25.0
+offset_right = 263.0
+offset_bottom = 87.0
+theme_override_constants/separation = 1
+
+[node name="RareCount" type="Label" parent="RareGroup"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 234.0
-offset_top = 26.0
-offset_right = 274.0
-offset_bottom = 42.0
+layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_fsn3i")
+label_settings = SubResource("LabelSettings_hfqn8")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="RareCount"]
-layout_mode = 0
-offset_left = -25.0
-offset_top = 19.0
-offset_right = 27.0
-offset_bottom = 61.0
+[node name="TextureRect" type="TextureRect" parent="RareGroup"]
+layout_mode = 2
 texture = ExtResource("3_561gy")
+stretch_mode = 3
 
-[node name="EpicCount" type="Label" parent="."]
+[node name="EpicGroup" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 97.0
+offset_right = 161.0
+offset_bottom = 159.0
+theme_override_constants/separation = 1
+
+[node name="EpicCount" type="Label" parent="EpicGroup"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 119.0
-offset_top = 96.0
-offset_right = 159.0
-offset_bottom = 112.0
+layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_fsn3i")
+label_settings = SubResource("LabelSettings_tahuu")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="EpicCount"]
-layout_mode = 0
-offset_left = -23.0
-offset_top = 20.0
-offset_right = 29.0
-offset_bottom = 62.0
+[node name="TextureRect" type="TextureRect" parent="EpicGroup"]
+layout_mode = 2
 texture = ExtResource("4_hfqn8")
+stretch_mode = 3
 
-[node name="LegendaryCount" type="Label" parent="."]
+[node name="LegendaryGroup" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 97.0
+offset_right = 224.0
+offset_bottom = 159.0
+theme_override_constants/separation = 1
+
+[node name="LegendaryCount" type="Label" parent="LegendaryGroup"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 196.0
-offset_top = 102.0
-offset_right = 236.0
-offset_bottom = 118.0
+layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_fsn3i")
+label_settings = SubResource("LabelSettings_rfsjh")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="LegendaryCount"]
-layout_mode = 0
-offset_left = -18.0
-offset_top = 16.0
-offset_right = 24.0
-offset_bottom = 58.0
+[node name="TextureRect" type="TextureRect" parent="LegendaryGroup"]
+layout_mode = 2
 texture = ExtResource("5_tahuu")
+stretch_mode = 3

@@ -66,6 +66,7 @@ func _select_tin(selected_tin: TextureButton) -> void:
 	tween.chain().tween_callback(_on_tin_centered)
 
 func _on_tin_centered() -> void:
+	AudioManager.play_soft_click()
 	instruction_label.text = "[wave freq=2]Open it!"
 	await get_tree().create_timer(0.15).timeout
 	set_process_input(true)
@@ -102,5 +103,7 @@ func _show_tin_result(result: TinData) -> void:
 	fish_bucks_count.text = "[wave amp=4 freq=2]$%d" % GameManager.get_fish_bucks()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept"):
 		get_tree().reload_current_scene()
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://screens/main_menu.tscn")

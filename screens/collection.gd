@@ -12,3 +12,7 @@ func _ready() -> void:
 	rare_count.text = str(GameManager.get_count("rare"))
 	epic_count.text = str(GameManager.get_count("epic"))
 	legendary_count.text = str(GameManager.get_count("legendary"))
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://screens/main_menu.tscn")

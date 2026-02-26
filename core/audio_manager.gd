@@ -9,6 +9,7 @@ var _music_player: AudioStreamPlayer
 var _music_main: AudioStream = preload("res://assets/audio/bossa_breeze_cafe.wav")
 var _sfx_tins_enter: AudioStream = preload("res://assets/audio/ui_pop_up.mp3")
 var _sfx_soft_pop: AudioStream = preload("res://assets/audio/soft_pop.wav")
+var _sfx_soft_click: AudioStream = preload("res://assets/audio/soft_click.wav")
 var _sfx_swipe: AudioStream = preload("res://assets/audio/swipe.wav")
 var _sfx_unwrap: AudioStream = preload("res://assets/audio/paper_unwrap.wav")
 var _sfx_reveal: AudioStream = preload("res://assets/audio/marimba_bloop.wav")
@@ -53,6 +54,9 @@ func play_reveal() -> void:
 func play_soft_pop() -> void:
 	play_sfx(_sfx_soft_pop, 0.2)
 
+func play_soft_click() -> void:
+	play_sfx(_sfx_soft_click, 0.1, -2.0)
+
 func play_swipe() -> void:
 	await get_tree().create_timer(0.05).timeout
-	play_sfx(_sfx_swipe, 0.1, -5.0)
+	play_sfx(_sfx_swipe, 0.1)

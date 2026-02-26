@@ -9,5 +9,5 @@ rarity = "epic"
 value = 1000
 weight = 4
 texture = ExtResource("2_yb1lm")
-color = Color(0.70980394, 0.3137255, 0.53333336, 1)
+color = Color(1, 0, 0.26666668, 1)
 metadata/_custom_type_script = "uid://7uq5edmei4st"
