@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj8iis8xwfc4f"
-path="res://.godot/imported/epic_tin.png-d861dcab22e2d3b143d5f5db6931bad8.ctex"
+uid="uid://ct8l8tnewe5ye"
+path="res://.godot/imported/shop_icon.png-32f88e98b466a5deab9786508d0ad138.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/epic_tin.png"
-dest_files=["res://.godot/imported/epic_tin.png-d861dcab22e2d3b143d5f5db6931bad8.ctex"]
+source_file="res://assets/sprites/shop_icon.png"
+dest_files=["res://.godot/imported/shop_icon.png-32f88e98b466a5deab9786508d0ad138.ctex"]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=1
+compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

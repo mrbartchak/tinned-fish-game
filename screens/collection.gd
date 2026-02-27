@@ -7,11 +7,11 @@ extends Control
 @onready var legendary_count: Label = %LegendaryCount
 
 func _ready() -> void:
-	common_count.text = str(GameManager.get_count("common"))
-	uncommon_count.text = str(GameManager.get_count("uncommon"))
-	rare_count.text = str(GameManager.get_count("rare"))
-	epic_count.text = str(GameManager.get_count("epic"))
-	legendary_count.text = str(GameManager.get_count("legendary"))
+	common_count.text = str(GameManager.get_inventory_count("common"))
+	uncommon_count.text = str(GameManager.get_inventory_count("uncommon"))
+	rare_count.text = str(GameManager.get_inventory_count("rare"))
+	epic_count.text = str(GameManager.get_inventory_count("epic"))
+	legendary_count.text = str(GameManager.get_inventory_count("legendary"))
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="tinned-fish-game"
-run/main_scene="uid://bqy554yv104x5"
+run/main_scene="uid://dunbtmaqpvgb5"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
 [autoload]
@@ -50,3 +50,7 @@ click={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/compress_with_gpu=false
+textures/vram_compression/cache_gpu_compressor=false
+textures/lossless_compression/force_png=true
+environment/defaults/default_clear_color=Color(0.7529412, 0.79607844, 0.8627451, 1)
