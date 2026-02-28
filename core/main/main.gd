@@ -10,6 +10,11 @@ var screen_width: float = 320.0
 var current_tab: int = 1
 
 @onready var content: Control = %Content
+
+@onready var collection_screen: CollectionScreen = %CollectionScreen
+@onready var home_screen: Control = %HomeScreen
+@onready var pack_screen: Control = %PackScreen
+
 @onready var collection_tab: TextureButton = %CollectionTab
 @onready var home_tab: TextureButton = %HomeTab
 @onready var pack_tab: TextureButton = %PackTab
@@ -28,3 +33,6 @@ func _switch_tab(index: int) -> void:
 	var tween = create_tween()
 	tween.tween_property(content, "position:x", SCREEN_OFFSETS[index], 1.5)\
 		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+	
+	if index == 0:
+		collection_screen.enter()

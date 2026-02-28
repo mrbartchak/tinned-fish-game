@@ -1,31 +1,34 @@
-[gd_scene load_steps=17 format=3 uid="uid://dunbtmaqpvgb5"]
+[gd_scene load_steps=12 format=3 uid="uid://dunbtmaqpvgb5"]
 
 [ext_resource type="Script" uid="uid://c7jghpypnlrnv" path="res://core/main/main.gd" id="1_8fcwd"]
-[ext_resource type="Texture2D" uid="uid://nrd76nk2f0y6" path="res://assets/sprites/home_icon.png" id="2_6vymn"]
-[ext_resource type="Texture2D" uid="uid://dbysc5s8ykerh" path="res://assets/sprites/collection_icon.png" id="2_vwfi5"]
-[ext_resource type="Texture2D" uid="uid://dwfugqdiq5cy3" path="res://assets/sprites/common_tin.png" id="2_vxc0a"]
-[ext_resource type="Texture2D" uid="uid://xxf14istdxbc" path="res://assets/sprites/uncommon_tin.png" id="3_xwlw8"]
-[ext_resource type="Texture2D" uid="uid://wn65fveq301w" path="res://assets/sprites/rare_tin.png" id="4_v0ilk"]
-[ext_resource type="Texture2D" uid="uid://ct8l8tnewe5ye" path="res://assets/sprites/shop_icon.png" id="4_yibi5"]
-[ext_resource type="Texture2D" uid="uid://bj8iis8xwfc4f" path="res://assets/sprites/epic_tin.png" id="5_4dl4c"]
-[ext_resource type="Texture2D" uid="uid://c7ji2jcxx7hsj" path="res://assets/sprites/legendary_tin.png" id="6_lkm43"]
+[ext_resource type="PackedScene" uid="uid://q43ku1g24aqf" path="res://screens/collection_screen.tscn" id="2_k5wvu"]
+[ext_resource type="PackedScene" uid="uid://dh1epmwk30ikh" path="res://screens/pack_screen.tscn" id="4_k5wvu"]
 [ext_resource type="Texture2D" uid="uid://cf0hilhx4uc2w" path="res://assets/sprites/fish_icon.png" id="7_v0ilk"]
-[ext_resource type="Texture2D" uid="uid://c3r0jsf6bv7sl" path="res://assets/sprites/fish_bucks_small.png" id="7_xwlw8"]
+[ext_resource type="Texture2D" uid="uid://dr11chchlc30n" path="res://assets/sprites/tab_icons.png" id="9_v0ilk"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_r831r"]
-font_color = Color(0.7529412, 0.79607844, 0.8627451, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dl4c"]
+atlas = ExtResource("9_v0ilk")
+region = Rect2(0, 12, 7, 6)
 
-[sub_resource type="LabelSettings" id="LabelSettings_cgjy1"]
-font_color = Color(0.3882353, 0.78039217, 0.3019608, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0ilk"]
+atlas = ExtResource("9_v0ilk")
+region = Rect2(0, 6, 7, 6)
 
-[sub_resource type="LabelSettings" id="LabelSettings_k3kj3"]
-font_color = Color(0, 0.6, 0.85882354, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwlw8"]
+atlas = ExtResource("9_v0ilk")
+region = Rect2(7, 12, 7, 6)
 
-[sub_resource type="LabelSettings" id="LabelSettings_iitoe"]
-font_color = Color(1, 0, 0.26666668, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkm43"]
+atlas = ExtResource("9_v0ilk")
+region = Rect2(7, 6, 7, 6)
 
-[sub_resource type="LabelSettings" id="LabelSettings_36iqi"]
-font_color = Color(0.99607843, 0.68235296, 0.20392157, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxc0a"]
+atlas = ExtResource("9_v0ilk")
+region = Rect2(14, 12, 7, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r831r"]
+atlas = ExtResource("9_v0ilk")
+region = Rect2(14, 6, 7, 6)
 
 [node name="Main" type="Control"]
 custom_minimum_size = Vector2(320, 180)
@@ -43,144 +46,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="CollectionScreen" type="Control" parent="Content"]
-custom_minimum_size = Vector2(320, 180)
-anchors_preset = 0
+[node name="CollectionScreen" parent="Content" instance=ExtResource("2_k5wvu")]
+unique_name_in_owner = true
+layout_mode = 0
 offset_left = -320.0
-offset_bottom = 180.0
-
-[node name="Background" type="ColorRect" parent="Content/CollectionScreen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Title" type="RichTextLabel" parent="Content/CollectionScreen"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -100.0
-offset_top = -13.0
-offset_right = 100.0
-offset_bottom = 37.0
-grow_horizontal = 2
-theme_override_colors/default_color = Color(0.7529412, 0.79607844, 0.8627451, 1)
-bbcode_enabled = true
-text = "[wave]collection"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CommonGroup" type="VBoxContainer" parent="Content/CollectionScreen"]
-layout_mode = 0
-offset_left = 61.0
-offset_top = 26.0
-offset_right = 124.0
-offset_bottom = 88.0
-theme_override_constants/separation = 1
-
-[node name="CommonCount" type="Label" parent="Content/CollectionScreen/CommonGroup"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_r831r")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Content/CollectionScreen/CommonGroup"]
-layout_mode = 2
-texture = ExtResource("2_vxc0a")
-stretch_mode = 3
-
-[node name="UncommonGroup" type="VBoxContainer" parent="Content/CollectionScreen"]
-layout_mode = 0
-offset_left = 129.0
-offset_top = 26.0
-offset_right = 192.0
-offset_bottom = 88.0
-theme_override_constants/separation = 1
-
-[node name="UncommonCount" type="Label" parent="Content/CollectionScreen/UncommonGroup"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_cgjy1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Content/CollectionScreen/UncommonGroup"]
-layout_mode = 2
-texture = ExtResource("3_xwlw8")
-stretch_mode = 3
-
-[node name="RareGroup" type="VBoxContainer" parent="Content/CollectionScreen"]
-layout_mode = 0
-offset_left = 197.0
-offset_top = 26.0
-offset_right = 260.0
-offset_bottom = 88.0
-theme_override_constants/separation = 1
-
-[node name="RareCount" type="Label" parent="Content/CollectionScreen/RareGroup"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_k3kj3")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Content/CollectionScreen/RareGroup"]
-layout_mode = 2
-texture = ExtResource("4_v0ilk")
-stretch_mode = 3
-
-[node name="EpicGroup" type="VBoxContainer" parent="Content/CollectionScreen"]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 91.0
-offset_right = 158.0
-offset_bottom = 153.0
-theme_override_constants/separation = 1
-
-[node name="EpicCount" type="Label" parent="Content/CollectionScreen/EpicGroup"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_iitoe")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Content/CollectionScreen/EpicGroup"]
-layout_mode = 2
-texture = ExtResource("5_4dl4c")
-stretch_mode = 3
-
-[node name="LegendaryGroup" type="VBoxContainer" parent="Content/CollectionScreen"]
-layout_mode = 0
-offset_left = 168.0
-offset_top = 91.0
-offset_right = 221.0
-offset_bottom = 153.0
-theme_override_constants/separation = 1
-
-[node name="LegendaryCount" type="Label" parent="Content/CollectionScreen/LegendaryGroup"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_36iqi")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Content/CollectionScreen/LegendaryGroup"]
-layout_mode = 2
-texture = ExtResource("6_lkm43")
-stretch_mode = 3
+offset_right = 0.0
 
 [node name="HomeScreen" type="Control" parent="Content"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(320, 180)
 anchors_preset = 0
 offset_right = 320.0
@@ -330,51 +203,11 @@ offset_bottom = 19.0
 texture = ExtResource("7_v0ilk")
 stretch_mode = 2
 
-[node name="PackScreen" type="Control" parent="Content"]
-custom_minimum_size = Vector2(320, 180)
-anchors_preset = 0
+[node name="PackScreen" parent="Content" instance=ExtResource("4_k5wvu")]
+unique_name_in_owner = true
+layout_mode = 0
 offset_left = 320.0
 offset_right = 640.0
-offset_bottom = 180.0
-
-[node name="Background" type="ColorRect" parent="Content/PackScreen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="FishBucksContainer" type="HBoxContainer" parent="Content/PackScreen"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -30.0
-offset_top = 5.0
-offset_right = 30.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_constants/separation = 3
-alignment = 1
-
-[node name="FishBucksIcon" type="TextureRect" parent="Content/PackScreen/FishBucksContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-texture = ExtResource("7_xwlw8")
-stretch_mode = 2
-
-[node name="FishBucksCount" type="RichTextLabel" parent="Content/PackScreen/FishBucksContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.09803922, 0.23529412, 0.24313726, 1)
-bbcode_enabled = true
-text = "[wave freq=2]$0000"
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
 
 [node name="TabBar" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -384,40 +217,40 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -17.0
-offset_top = -10.0
+offset_top = -14.0
 offset_right = 18.0
-offset_bottom = -4.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 8
+theme_override_constants/separation = 6
 alignment = 1
 
 [node name="CollectionTab" type="TextureButton" parent="TabBar"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
-texture_normal = ExtResource("2_vwfi5")
-texture_pressed = ExtResource("2_vwfi5")
-texture_hover = ExtResource("2_vwfi5")
-texture_disabled = ExtResource("2_vwfi5")
-texture_focused = ExtResource("2_vwfi5")
+texture_normal = SubResource("AtlasTexture_4dl4c")
+texture_pressed = SubResource("AtlasTexture_4dl4c")
+texture_hover = SubResource("AtlasTexture_v0ilk")
+texture_disabled = SubResource("AtlasTexture_4dl4c")
+texture_focused = SubResource("AtlasTexture_4dl4c")
 
 [node name="HomeTab" type="TextureButton" parent="TabBar"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
-texture_normal = ExtResource("2_6vymn")
-texture_pressed = ExtResource("2_6vymn")
-texture_hover = ExtResource("2_6vymn")
-texture_disabled = ExtResource("2_6vymn")
-texture_focused = ExtResource("2_6vymn")
+texture_normal = SubResource("AtlasTexture_xwlw8")
+texture_pressed = SubResource("AtlasTexture_xwlw8")
+texture_hover = SubResource("AtlasTexture_lkm43")
+texture_disabled = SubResource("AtlasTexture_xwlw8")
+texture_focused = SubResource("AtlasTexture_xwlw8")
 
 [node name="PackTab" type="TextureButton" parent="TabBar"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
-texture_normal = ExtResource("4_yibi5")
-texture_pressed = ExtResource("4_yibi5")
-texture_hover = ExtResource("4_yibi5")
-texture_disabled = ExtResource("4_yibi5")
-texture_focused = ExtResource("4_yibi5")
+texture_normal = SubResource("AtlasTexture_vxc0a")
+texture_pressed = SubResource("AtlasTexture_vxc0a")
+texture_hover = SubResource("AtlasTexture_r831r")
+texture_disabled = SubResource("AtlasTexture_vxc0a")
+texture_focused = SubResource("AtlasTexture_vxc0a")

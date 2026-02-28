@@ -4,7 +4,7 @@ var follow_speed: float = 32.0
 @onready var sprite: Sprite2D = $Sprite
 
 func _ready() -> void:
-	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	layer = 100
 
 func _process(delta: float) -> void:

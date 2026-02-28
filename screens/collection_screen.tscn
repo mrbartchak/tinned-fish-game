@@ -1,0 +1,162 @@
+[gd_scene load_steps=12 format=3 uid="uid://q43ku1g24aqf"]
+
+[ext_resource type="Script" uid="uid://bkpsscwk6kpi2" path="res://screens/collection_screen.gd" id="1_v1ttq"]
+[ext_resource type="Texture2D" uid="uid://dwfugqdiq5cy3" path="res://assets/sprites/common_tin.png" id="1_vlc45"]
+[ext_resource type="Texture2D" uid="uid://xxf14istdxbc" path="res://assets/sprites/uncommon_tin.png" id="2_v1ttq"]
+[ext_resource type="Texture2D" uid="uid://wn65fveq301w" path="res://assets/sprites/rare_tin.png" id="3_pfjun"]
+[ext_resource type="Texture2D" uid="uid://bj8iis8xwfc4f" path="res://assets/sprites/epic_tin.png" id="4_aktex"]
+[ext_resource type="Texture2D" uid="uid://c7ji2jcxx7hsj" path="res://assets/sprites/legendary_tin.png" id="5_hdiou"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r831r"]
+font_color = Color(0.7529412, 0.79607844, 0.8627451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cgjy1"]
+font_color = Color(0.3882353, 0.78039217, 0.3019608, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k3kj3"]
+font_color = Color(0, 0.6, 0.85882354, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iitoe"]
+font_color = Color(1, 0, 0.26666668, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_36iqi"]
+font_color = Color(0.99607843, 0.68235296, 0.20392157, 1)
+
+[node name="CollectionScreen" type="Control"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+script = ExtResource("1_v1ttq")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = -13.0
+offset_right = 100.0
+offset_bottom = 37.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.7529412, 0.79607844, 0.8627451, 1)
+bbcode_enabled = true
+text = "[wave]collection"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CommonGroup" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 26.0
+offset_right = 124.0
+offset_bottom = 88.0
+theme_override_constants/separation = 1
+
+[node name="CommonCount" type="Label" parent="CommonGroup"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_r831r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CommonGroup"]
+layout_mode = 2
+texture = ExtResource("1_vlc45")
+stretch_mode = 3
+
+[node name="UncommonGroup" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 26.0
+offset_right = 192.0
+offset_bottom = 88.0
+theme_override_constants/separation = 1
+
+[node name="UncommonCount" type="Label" parent="UncommonGroup"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_cgjy1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UncommonGroup"]
+layout_mode = 2
+texture = ExtResource("2_v1ttq")
+stretch_mode = 3
+
+[node name="RareGroup" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 26.0
+offset_right = 260.0
+offset_bottom = 88.0
+theme_override_constants/separation = 1
+
+[node name="RareCount" type="Label" parent="RareGroup"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_k3kj3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="RareGroup"]
+layout_mode = 2
+texture = ExtResource("3_pfjun")
+stretch_mode = 3
+
+[node name="EpicGroup" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 91.0
+offset_right = 158.0
+offset_bottom = 153.0
+theme_override_constants/separation = 1
+
+[node name="EpicCount" type="Label" parent="EpicGroup"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_iitoe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="EpicGroup"]
+layout_mode = 2
+texture = ExtResource("4_aktex")
+stretch_mode = 3
+
+[node name="LegendaryGroup" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 91.0
+offset_right = 221.0
+offset_bottom = 153.0
+theme_override_constants/separation = 1
+
+[node name="LegendaryCount" type="Label" parent="LegendaryGroup"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_36iqi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="LegendaryGroup"]
+layout_mode = 2
+texture = ExtResource("5_hdiou")
+stretch_mode = 3
